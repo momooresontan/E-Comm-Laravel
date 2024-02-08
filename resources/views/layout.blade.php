@@ -19,13 +19,8 @@
     <title>E-comm project</title>
 </head>
 <body>
-    
+    {{ View::make('header') }}
+    @yield('content')
+    {{ View::make('footer') }}
 </body>
-<script>
-    $(document).ready(function(){
-        $('button').click(function(){
-            alert('All set');
-        })
-    });
-</script>
 </html>
