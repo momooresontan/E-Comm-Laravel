@@ -13,6 +13,7 @@ class UserController extends Controller
         if(!$user || !Hash::check($request->password, $user->password)){
             return "Invalid username or password";
         }else{
+            $request->session()->put('user', $user);
             return redirect('/');
         }
     }
