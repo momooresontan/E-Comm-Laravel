@@ -10,8 +10,10 @@ class UserController extends Controller
 {
     public function login(Request $request){
         $user =  User::where(['email'=>$request->email])->first();
-        if($user || Hash::check($request->password, $user->password)){
-
+        if(!$user || !Hash::check($request->password, $user->password)){
+            return "Invalid username or password";
+        }else{
+            return redirect('/');
         }
     }
 }
