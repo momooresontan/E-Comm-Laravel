@@ -1,9 +1,9 @@
 @extends('layout')
 
 @section('content')
-    <div class="container">
+    <div class="container custom-login">
         <div class="row">
-            <div class="col-sm-4 col-sm-offset-4">
+            <div class="col-sm-4 col-sm-offset-4 mx-auto">
                 <form>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
