@@ -12,15 +12,15 @@
                     aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="..." class="d-block w-100" alt="...">
+                @foreach ($products as $product)
+                <div class="carousel-item {{item['id'] == 1 ? 'active' :''}}">
+                    <img src="..." class="d-block w-100" alt="nothing">
+                    <div class="carousel-caption">
+                        <h3>Momo</h3>
+                        <p>Cool guy</p>
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
-                </div>
+                @endforeach
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="prev">
