@@ -15,6 +15,11 @@ class ProductController extends Controller
         return view('show', ['product' => $product]);
     }
     public function addToCart(Request $request){
-        return 'hello';
+        if($request->session()->has('user')){
+            return 'hello';
+        }else{
+            return redirect('/login');
+        }
+
     }
 }
