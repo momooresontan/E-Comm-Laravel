@@ -33,13 +33,16 @@
           </div>
           <div class="trending-wrapper">
             <h3>Trending Products</h3>
-            <div class="">
-                <img class="" src="{{ $product->gallery }}">
+            @foreach($products as $product)
+            <div class="trending-item">
+                <img class="trending-image" src="{{ $product->gallery }}">
                 <div class="">
                     <h3>{{ $product->name }}</h3>
                     <p>{{ $product->description }}</p>
                 </div>
-            </div
+            </div>
+            @endforeach
           </div>
+        </div>
     </div>
 @endsection
