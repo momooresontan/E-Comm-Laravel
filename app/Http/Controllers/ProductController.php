@@ -8,9 +8,10 @@ class ProductController extends Controller
 {
     public function index(){
         $product = Product::all();
-        return view('product', ['products' => $product]);
+        return view('index', ['products' => $product]);
     }
     public function show(Product $product){
-        return Product::find($product);
+        //$data = Product::find($product);
+        return view('show', ['product' => $product]);
     }
 }
