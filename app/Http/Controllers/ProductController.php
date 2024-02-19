@@ -14,4 +14,7 @@ class ProductController extends Controller
         //$data = Product::find($product);
         return view('show', ['product' => $product]);
     }
+    public function addToCart(Request $request){
+        return 'hello';
+    }
 }

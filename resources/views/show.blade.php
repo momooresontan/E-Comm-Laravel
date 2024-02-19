@@ -13,7 +13,11 @@
                 <h4>Details: {{ $product->description }}</h4>
                 <h4>Category: {{ $product->category }}</h4>
                 <br><br>
-                <button class="btn btn-primary text-uppercase">Add to Cart</button>
+                <form method="POST" action="/add-to-cart">
+                    @csrf
+                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                    <button class="btn btn-primary text-uppercase">Add to Cart</button>
+                </form>
                 <button class="btn btn-success text-uppercase m-3">Buy Now</button>
                 <br><br>
             </div>
