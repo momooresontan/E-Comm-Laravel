@@ -15,7 +15,7 @@
                 @foreach ($products as $product)
                 <div class="carousel-item {{ $product->id==6 ? 'active' : '' }}">
                     <img class="slider-img" src="{{ $product->gallery }}">
-                    <div class="carousel-caption">
+                    <div class="carousel-caption slider-text rounded-4">
                         <h3>{{ $product->name }}</h3>
                         <p>{{ $product->description }}</p>
                     </div>
@@ -30,6 +30,16 @@
             <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
               <span class="carousel-control-next-icon"></span>
             </button>
+          </div>
+          <div class="trending-wrapper">
+            <h3>Trending Products</h3>
+            <div class="">
+                <img class="" src="{{ $product->gallery }}">
+                <div class="">
+                    <h3>{{ $product->name }}</h3>
+                    <p>{{ $product->description }}</p>
+                </div>
+            </div
           </div>
     </div>
 @endsection
