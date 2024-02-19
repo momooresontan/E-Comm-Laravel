@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <div class="container custom-product">
+    <div class="custom-product">
         <div id="demo" class="carousel slide" data-bs-ride="carousel">
             <!-- Indicators/dots -->
             <div class="carousel-indicators">
@@ -14,7 +14,7 @@
             <div class="carousel-inner">
                 @foreach ($products as $product)
                 <div class="carousel-item {{ $product->id==6 ? 'active' : '' }}">
-                    <img src="{{ $product->gallery }}" class="slider-img">
+                    <img class="slider-img" src="{{ $product->gallery }}">
                     <div class="carousel-caption">
                         <h3>{{ $product->name }}</h3>
                         <p>{{ $product->description }}</p>
