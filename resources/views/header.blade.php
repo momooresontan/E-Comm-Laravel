@@ -1,3 +1,7 @@
+<?php 
+
+?>
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">MoSH<i class="bi bi-brilliance"></i></a>
@@ -14,7 +18,7 @@
                     <a class="nav-link" href="#">Orders<i class="bi bi-clipboard2"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Cart<i class="bi bi-cart"></i></a>
+                    <a class="nav-link" href="#">Cart(0)<i class="bi bi-cart"></i></a>
                 </li>
                 {{-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
