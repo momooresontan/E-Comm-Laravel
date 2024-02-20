@@ -38,3 +38,7 @@ Route::get('remove-from-cart/{id}', [ProductController::class, 'removeFromCart']
 
 Route::get('order-now', [ProductController::class, 'orderNow']);
 
+Route::post('place-order', [ProductController::class, 'placeOrder']);
+
+
+

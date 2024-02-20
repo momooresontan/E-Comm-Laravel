@@ -24,18 +24,19 @@
                 </tbody>
             </table>
             <div>
-                <form action="/action_page.php">
+                <form action="/place-order" method="POST">
+                    @csrf
                     <div class="mb-3 mt-3">
                         <label for="pay" class="form-label fw-bold">Delivery Address: </label><br>
                         <textarea type="text" class="form-control" name="address" placeholder="Enter your address: "></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="pay" class="form-label fw-bold">Payment Method:</label><br>
-                        <input type="radio" name="pay"> <span>Cash Payment</span><br>
-                        <input type="radio" name="pay"> <span>Card Payment</span><br>
-                        <input type="radio" name="pay"> <span>Transfer</span><br>
+                        <input type="radio" value="cash" name="pay"> <span>Cash Payment</span><br>
+                        <input type="radio" value="cash" name="pay"> <span>Card Payment</span><br>
+                        <input type="radio" value="cash" name="pay"> <span>Transfer</span><br>
                     </div>
-                    <button type="submit" class="btn btn-primary">Order Now</button>
+                    <button type="submit" class="btn btn-light">Order Now</button>
                 </form>
             </div>
         </div>

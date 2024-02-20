@@ -59,4 +59,12 @@ class ProductController extends Controller
 
         return view('ordernow', ['total' => $total]);
     }
+
+    public function placeOrder(Request $request){
+        $userId = Session::get('user')->id;
+        $cartItems = Cart::where('user_id', $userId)->get();
+        foreach($cartItems as $item){
+            
+        }
+    }
 }
