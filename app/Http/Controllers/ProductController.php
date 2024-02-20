@@ -35,6 +35,13 @@ class ProductController extends Controller
     }
 
     public function showCart(){
-        echo "Hello";
+        $userId = Session::get('user')->id;
+        $products = DB::table('cart')
+        ->join('products', 'cart.product_id', '=', 'products.id')
+        ->where('cart.user_id', $userId)
+        ->select('products.*')
+        ->get();
+
+        return view('showCart', ['products' => $products]);
     }
 }
