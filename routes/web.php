@@ -32,5 +32,5 @@ Route::get('/products/{product}', [ProductController::class, 'show']);
 
 Route::post('/add-to-cart', [ProductController::class, 'addToCart']);
 
-Route::get('/cart-list', [ProductController::class, 'showCart']);
+Route::get('/show-cart', [ProductController::class, 'showCart']);
 

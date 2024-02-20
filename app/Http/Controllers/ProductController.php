@@ -42,6 +42,6 @@ class ProductController extends Controller
         ->select('products.*')
         ->get();
 
-        return view('showCart', ['products' => $products]);
+        return view('showcart', ['products' => $products]);
     }
 }
