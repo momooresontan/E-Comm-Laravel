@@ -18,14 +18,15 @@
                         <td>$ 10</td>
                     </tr>
                     <tr>
-                        <td>Total Amount</td>
-                        <td>$ {{ $total + 10 }}</td>
+                        <td class="fw-bold">Total Amount</td>
+                        <td class="fw-bold">$ {{ $total + 10 }}</td>
                     </tr>
                 </tbody>
             </table>
             <div>
                 <form action="/action_page.php">
                     <div class="mb-3 mt-3">
+                        <label for="pay" class="form-label fw-bold">Delivery Address: </label><br>
                         <textarea type="text" class="form-control" name="address" placeholder="Enter your address: "></textarea>
                     </div>
                     <div class="mb-3">
@@ -34,7 +35,7 @@
                         <input type="radio" name="pay"> <span>Card Payment</span><br>
                         <input type="radio" name="pay"> <span>Transfer</span><br>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Order Now</button>
                 </form>
             </div>
         </div>
