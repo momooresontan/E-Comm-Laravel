@@ -8,30 +8,34 @@ if(Session::has('user')){
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">MoSH<i class="bi bi-brilliance"></i></a>
+        <a class="navbar-brand" href="/">MoSH<i class="bi bi-brilliance"></i></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a class="nav-link" href="#">Orders<i class="bi bi-clipboard2"></i></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Cart({{ $total }})<i class="bi bi-cart"></i></a>
                 </li>
+                @if(Session::has('user'))
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Dropdown</a>
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">{{ Session::get('user')->name }}</a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Link</a></li>
-                      <li><a class="dropdown-item" href="#">Another link</a></li>
-                      <li><a class="dropdown-item" href="#">A third link</a></li>
+                      <li><a class="dropdown-item" href="/logout">Logout</a></li>
                     </ul>
                 </li>
+                @else
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+                @endif
                 {{-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
