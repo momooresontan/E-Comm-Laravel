@@ -7,14 +7,21 @@
         <div class="trending-wrapper">
             <h4>My Cart</h4>
             @foreach($products as $product)
-                <div class="searched-item">
-                    <a href="products/{{ $product->id }}">
-                        <img class="trending-image" src="{{ $product->gallery }}">
-                        <div class="">
-                            <h2>{{ $product->name }}</h2>
-                            <h5>{{ $product->description }}</h5>
-                        </div>
-                    </a>
+                <div class="row searched-item cart-list-divider">
+                    <div class="col-sm-3">
+                        <a href="products/{{ $product->id }}">
+                            <img class="trending-image" src="{{ $product->gallery }}">
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                            <div class="">
+                                <h2>{{ $product->name }}</h2>
+                                <h5>{{ $product->description }}</h5>
+                            </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <button class="btn btn-danger text-uppercase">Remove from Cart</button>
+                    </div>
                 </div>
             @endforeach            
         </div>
