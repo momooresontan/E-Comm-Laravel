@@ -6,6 +6,7 @@ use App\Models\Cart;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -31,5 +32,9 @@ class ProductController extends Controller
     public static function cartItem(){
         $userId = Session::get('user')->id;
         return Cart::where('user_id', $userId)->count();
+    }
+
+    public function showCart(){
+        echo "Hello";
     }
 }
