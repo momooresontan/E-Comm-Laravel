@@ -6,6 +6,9 @@
     <div class="col-sm-10">
         <div class="trending-wrapper">
             <h4>My Cart</h4>
+            <a href="order-now" class="btn btn-success text-uppercase">Order Now</a>
+            <br>
+            <br>
             @foreach($products as $product)
                 <div class="row searched-item cart-list-divider">
                     <div class="col-sm-3">
@@ -25,6 +28,7 @@
                 </div>
             @endforeach            
         </div>
+        <a href="order-now" class="btn btn-success text-uppercase">Order Now</a><br>
     </div>
 </div>
 
