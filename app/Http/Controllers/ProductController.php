@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -64,7 +65,16 @@ class ProductController extends Controller
         $userId = Session::get('user')->id;
         $cartItems = Cart::where('user_id', $userId)->get();
         foreach($cartItems as $item){
-            
+            $order = new Order;
+            $order->product_id=$item->product_id;
+            $order->user_id=$item->user_id;
+            $order->status="pending";
+            $order->payment_method=$request->pay;
+            $order->payment_status="pending";   
+            $order->address=$request->address;
+            $order->save();
+            Cart::where('user_id', $userId)->delete();
         }
+        return redirect('/');
     }
 }
