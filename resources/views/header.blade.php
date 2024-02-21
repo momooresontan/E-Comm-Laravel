@@ -4,6 +4,10 @@ $total = 0;
 if(Session::has('user')){
     $total = ProductController::cartItem();
 }
+$totalOrder = 0;
+if(Session::has('user')){
+    $totalOrder = ProductController::orderItem();
+}
 ?>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -19,7 +23,7 @@ if(Session::has('user')){
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li> --}}
                 <li class="nav-item">
-                    <a class="nav-link" href="/my-order">Orders<i class="bi bi-clipboard2"></i></a>
+                    <a class="nav-link" href="/my-order">Orders({{ $totalOrder }})<i class="bi bi-clipboard2"></i></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/show-cart">Cart({{ $total }})<i class="bi bi-cart"></i></a>

@@ -78,12 +78,17 @@ class ProductController extends Controller
         return redirect('/');
     }
 
+    public static function orderItem(){
+        $userId = Session::get('user')->id;
+        return Order::where('user_id', $userId)->count();
+    }
+
     public function myOrder(){
         $userId = Session::get('user')->id;
         $total = DB::table('orders')
         ->join('products', 'orders.product_id', '=', 'products.id')
         ->where('orders.user_id', $userId)
-        ->sum('products.price');
+        ->get();
 
         return view('myorder', ['total' => $total]);
     }
