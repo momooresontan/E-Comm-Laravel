@@ -85,11 +85,11 @@ class ProductController extends Controller
 
     public function myOrder(){
         $userId = Session::get('user')->id;
-        $total = DB::table('orders')
+        $orders = DB::table('orders')
         ->join('products', 'orders.product_id', '=', 'products.id')
         ->where('orders.user_id', $userId)
         ->get();
 
-        return view('myorder', ['total' => $total]);
+        return view('myorder', ['orders' => $orders]);
     }
 }

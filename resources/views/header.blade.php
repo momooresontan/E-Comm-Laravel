@@ -39,6 +39,9 @@ if(Session::has('user')){
                 <li class="nav-item">
                     <a class="nav-link" href="/login">Login</a>
                 </li>
+                <li>
+                    <a class="nav-link" href="/register">Register</a>
+                </li>
                 @endif
                 {{-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
