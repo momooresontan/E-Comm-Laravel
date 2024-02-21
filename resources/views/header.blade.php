@@ -19,7 +19,7 @@ if(Session::has('user')){
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li> --}}
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Orders<i class="bi bi-clipboard2"></i></a>
+                    <a class="nav-link" href="/my-orders">Orders<i class="bi bi-clipboard2"></i></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/show-cart">Cart({{ $total }})<i class="bi bi-cart"></i></a>
