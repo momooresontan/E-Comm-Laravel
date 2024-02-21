@@ -40,5 +40,8 @@ Route::get('order-now', [ProductController::class, 'orderNow']);
 
 Route::post('place-order', [ProductController::class, 'placeOrder']);
 
+Route::get('my-order', [ProductController::class, 'myOrder']);
+
+
 
 
